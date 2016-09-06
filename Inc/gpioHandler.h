@@ -38,6 +38,12 @@
 #define D7_PIN							GPIO_PIN_8
 #define D7_GPIO_PORT					GPIOA
 
+#define D8_PIN							GPIO_PIN_9
+#define D8_GPIO_PORT					GPIOA
+
+#define D9_PIN							GPIO_PIN_7
+#define D9_GPIO_PORT					GPIOC
+
 // Data IO Direction
 typedef enum
 {
@@ -56,10 +62,12 @@ typedef enum
   D4 = 4,
   D5 = 5,
   D6 = 6,
-  D7 = 7
+  D7 = 7,
+  D8 = 8,
+  D9 = 9
 } IO_Type;
 
-#define IOn		8
+#define IOn		10
 
 // ADC
 typedef enum

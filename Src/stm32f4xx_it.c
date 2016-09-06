@@ -44,7 +44,6 @@
 /* External variables --------------------------------------------------------*/
 extern void xPortSysTickHandler(void);
 extern ADC_HandleTypeDef    AdcHandle;
-extern __IO uint32_t uhADCxConvertedValue;
 
 /******************************************************************************/
 /*            Cortex-M4 Processor Interruption and Exception Handlers         */ 
@@ -80,17 +79,6 @@ void SysTick_Handler(void)
 void ADC_IRQHandler(void)
 {
   HAL_ADC_IRQHandler(&AdcHandle);
-}
-
-/**
-* @brief  This function handles DMA interrupt request.
-* @param  None
-* @retval None
-*/
-void ADCx_DMA_IRQHandler(void)
-{
-  HAL_DMA_IRQHandler(AdcHandle.DMA_Handle);
-  printf(".E.\r\n");
 }
 
 /* USER CODE BEGIN 1 */

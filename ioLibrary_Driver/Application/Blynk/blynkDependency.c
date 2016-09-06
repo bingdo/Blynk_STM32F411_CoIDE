@@ -24,7 +24,7 @@ uint16_t analogRead(uint8_t pin)
 {
 	uint8_t analog_pin = 0;
 	uint16_t val = 0;
-	if(pin >  14) analog_pin = pin - 14;
+	if(pin > 14) analog_pin = pin - 14;
 	val = get_ADC_val(analog_pin);
 	printf("analog pin %d read\r\n", analog_pin);
 	return val;
@@ -42,6 +42,7 @@ void analogWrite(uint8_t pin, uint8_t val)
 // 2: Input Pull-up
 void pinMode(uint8_t pin, pinmode_dir dir)
 {
+	if(pin > IOn) return;
 	if(dir == INPUT) 				IOdata[pin] = Input;
 	else if(dir == INPUT_PULLUP)	IOdata[pin] = Input;
 	else if(dir == OUTPUT)			IOdata[pin] = Output; // Output

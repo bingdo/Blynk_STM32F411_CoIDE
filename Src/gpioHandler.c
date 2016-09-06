@@ -14,10 +14,10 @@
 uint8_t IOdata[IOn];
 
 GPIO_TypeDef* IO_PORT[IOn] = {D0_GPIO_PORT, D1_GPIO_PORT, D2_GPIO_PORT, D3_GPIO_PORT,
-							  D4_GPIO_PORT, D5_GPIO_PORT, D6_GPIO_PORT, D7_GPIO_PORT,
+							  D4_GPIO_PORT, D5_GPIO_PORT, D6_GPIO_PORT, D7_GPIO_PORT, D8_GPIO_PORT, D9_GPIO_PORT
 							  };
 const uint16_t IO_PIN[IOn] = {D0_PIN, D1_PIN, D2_PIN, D3_PIN,
-							  D4_PIN, D5_PIN, D6_PIN, D7_PIN,
+							  D4_PIN, D5_PIN, D6_PIN, D7_PIN, D8_PIN, D9_PIN
 							  };
 
 /**
@@ -29,6 +29,7 @@ void GPIO_Configuration(void)
 {
 	__GPIOA_CLK_ENABLE();
 	__GPIOB_CLK_ENABLE();
+	__GPIOC_CLK_ENABLE();
 
 	IOdata[D0] = Output;
 	IOdata[D1] = Output;
@@ -38,6 +39,8 @@ void GPIO_Configuration(void)
 	IOdata[D5] = Output;
 	IOdata[D6] = Output;
 	IOdata[D7] = Output;
+	IOdata[D8] = Output;
+	IOdata[D9] = Output;
 
 	for(int i = 0; i < IOn; i++)
 	{
